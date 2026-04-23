@@ -3,7 +3,7 @@ import { css } from "lit";
 export default css`
     :host {
         box-sizing: border-box;
-        z-index: 3;
+        z-index: 10;
     }
 
     body {
@@ -14,16 +14,28 @@ export default css`
         margin: 0;
     }
 
-    /* button {
-        background-color: green;
+    .donatenow {
+        /* background-color: green;
         border: 0;
         border-radius: 5px;
         box-shadow:0 2px 4px rgba(0, 0, 0, 0.2);
         padding: 10px 25px;
-                cursor: pointer;
+                cursor: pointer; */
+        background-color: black;
+        border: 0;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        padding: 11px 24px;
+        cursor: pointer;
+        /* justify-content: end; */
+        /* padding: 6px; */
+        margin: 88px;
+        /* align-self: flex-end; */
+        margin-top: auto;
+        color:white;
 
-    } */
-    
+    }
+
     .modal-container {
         background-color: rgba(0, 0, 0, 0.3);
         position: fixed;
@@ -40,47 +52,19 @@ export default css`
             /* opacity:1; */
         /* transition: opactiy 0.3s ease; */
     }
-
-    /* .modal-container {
-        background-color: rgba(0, 0, 0, 0.3);
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100vw;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity:1;
-        transition: opactiy 0.3s ease;
-    }
-     */
+    
     .modal-container.close {
         pointer-events: auto;
-        opacity:0;
+        /* opacity:0; */
     }
 
-    /* .modal {
-        background-color: white;
-        height: 78vh;
-        width: 80vw;
-        background-size: cover;
-        background-image: url('src/assets/patnew.png');
-        padding: 30px 50px;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        text-align: center;
-    } */
-
     .modal {
-        background-size: cover;
-        background-position: bottom;
-        background-image: url('src/assets/patnew.png');
-        /* height: 100vh; */
-        /* width: 100%; */
+        background-color: white;
+        max-width: calc(100% - 80px);
+        max-height: calc(100% - 80px);
+        /* height: auto;
+        width: auto; */
         /* padding: 30px 50px; */
-        height: 90vh;
-        width: 86%;
         border-radius: 16px;
         box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px;
         text-align: center;
@@ -90,6 +74,7 @@ export default css`
         margin-right: auto;
         margin-bottom: auto;
         margin-top: auto;
+        overflow-y: auto;
     }
 
     .header {
@@ -99,17 +84,30 @@ export default css`
         justify-content: flex-end
     }
 
-    p {
-        color: white;
-        cursor: default; /* Changes from I-beam to arrow */
-  user-select: none;
+    .form-container {
+        /* display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding: 21px; */
+            display: grid;
+    /* grid-template-columns: 100px 1fr; */
+    gap: 15px 10px;
+    max-width: 400px;
+    margin: auto;
+    background-color: white;
+    padding: 2px;
+    grid-template-columns: repeat(1, fit-content(100%));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    /* border-radius: 8px; */
+    /* box-shadow: 0 4px 8px  */
     }
 
     .close-button {
       background: none;
       padding:none;
         cursor: pointer;
-        border: none;
+        box-shadow: none;
+        border:none;
 
     }
 
@@ -117,30 +115,37 @@ export default css`
         content: "×";
         display: block;
         font-size: 2em;
-        color: white;
+        color: black;
 
     }
 
-    .gofundme {
-    cursor: pointer;
-    /* margin-top: auto; */
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: auto;
-    border-radius: 6px;
-    background-color: white;
-        border: 0;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        padding: 11px 24px;
-        color:black;
+    input {
+        height: 30px;
+        border-radius: 8px;
     }
 
-    @media(min-width:600px){
+    .form-field {
+        display: grid;
+        row-gap: 4px;
+        column-gap: 12px;
+        justify-content: start;
+        grid-template-columns: 20% 1fr;
+        align-items: center;
+        grid-template-columns: repeat(1, fit-content(100%));
+        
+    }
+
+    .auction-img {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+    }
+    @media(min-width:619px){
         .modal {
-            background-size: cover;
-            background-image: url('src/assets/patnew.png');
-            max-width: 800px;
+            background-color: white;
+            /* height: auto;
+            width: 37vw; */
             /* padding: 30px 50px; */
             border-radius: 16px;
             box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px;
@@ -151,8 +156,6 @@ export default css`
             margin-right: auto;
             margin-bottom: auto;
             margin-top: auto;
-            border-radius: 5px;
-            box-shadow:0 2px 4px rgba(0, 0, 0, 0.2);
         }
     }
 `;

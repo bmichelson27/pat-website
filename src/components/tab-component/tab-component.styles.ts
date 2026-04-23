@@ -6,7 +6,6 @@ export default css`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 32px;
 }
 
 
@@ -30,6 +29,10 @@ export default css`
     font-weight: bold;
     padding: 16px;
     margin: 0 0 32px;
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+    background: wheat;
 }
 
 .tabs p {
@@ -37,20 +40,20 @@ export default css`
 }
 
 .tabs p:hover {
-    color: red;
+    color: white;
     cursor: pointer;
 
 }
 
 .tabs p.active {
-    color: red;
+    color: #000080;
     position: relative;
 }
 
 .line {
     height: 3px;
     width: 100%;
-    background-color: rgb(231, 231, 231);
+    background-color: #000080;
     position: absolute;
     top: 96px;
 }
@@ -59,12 +62,37 @@ export default css`
     content: "";
     width: 100%;
     height: 4px;
-    background-color: purple;
+    background-color: black;
     position: absolute;
     bottom: -32px;
     left: -1%;
     z-index: 2;
     border-radius: 10px;
 }
+
+/* .modal-container.close {
+        opacity:0;
+    }
+.modal-container.open {
+        opacity:1;
+    } */
+.modal-container {
+    display:none;
+}
+
+@media(min-width:619px){
+    .tabs .active::before {
+        content: "";
+        width: 100%;
+        height: 4px;
+        background-color:  #000080;
+        position: absolute;
+        bottom: -32px;
+        left: -1%;
+        z-index: 2;
+        border-radius: 10px;
+    }
+}
+
 
 `

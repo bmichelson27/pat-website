@@ -2,7 +2,6 @@ import {LitElement, html} from 'lit';
 import {customElement} from 'lit/decorators.js';
 import componentStyle from './silent-auction-items.styles'
 import type { SilentAuctionItem } from '../../models/silent-auction-item';
-import {auctionItemService} from '../../services/auction-item';
 
 @customElement('silent-auction-items')
 export class SilentAuctionItems extends LitElement {
@@ -11,51 +10,93 @@ export class SilentAuctionItems extends LitElement {
     private _silentAuctionItems: SilentAuctionItem[] = [
         {
             id:"1",
-            name: "Signed Puck",
-            image: "https://picsum.photos/seed/5/200",
-            description: "This is a signed puck"
+            name: "Islander Dynasty Signed Plagues & Replica Stanley Cup Rings",
+            image: "src/assets/islanders.png",
+            description: "Billy Smith, Denis Potvin, Bryan Trottier, Mike Bossy, Clark Gillies and Bobby Nystrom Signed Plagues & Replica Stanley Cup Rings"
         },
         {
             id:"2",
-            name: "Signed Stick",
-            image: "https://picsum.photos/seed/1/200",
-            description: "This is a signed Stick"
+            name: "Linus Ullmark signed jersey",
+            image: "src/assets/Ulmark.png",
+            description: "Linus Ullmark signed jersey"
         },
         {
             id:"3",
-            name: "Signed Hat",
-            image: "https://picsum.photos/seed/2/200",
-            description: "This is a signed hat"
+            name: "Signed Noah Dobson Jersey",
+            image: "src/assets/noahdobson.png",
+            description: "Noah Dobson signed jersey"
         },
         {
             id:"4",
-            name: "Signed Helment",
-            image: "https://picsum.photos/seed/3/200",
-            description: "This is a signed Helment"
+            name: "Mathew Barzel signed puck",
+            image: "src/assets/barzel.png",
+            description: "Mathew Barzel signed puck in framed photo"
         },
         {
             id:"5",
-            name: "Signed Jersey",
-            image: "https://picsum.photos/seed/4/200",
-            description: "This is a signed Jersey"
+            name: "Ryan pulock signed puck",
+            image: "src/assets/pullock.png",
+            description: "Ryan pulock signed puck in framed photo"
         },
         {
             id:"6",
-            name: "Signed Guard",
-            image: "https://picsum.photos/seed/6/200",
-            description: "This is a signed Guard"
+            name: "Signed Jean Gabriel Pageau Puck",
+            image: "src/assets/jgp.png",
+            description: "Signed Jean Gabriel Pageau Puck"
         },
         {
             id:"7",
-            name: "Signed Fan",
-            image: "https://picsum.photos/seed/7/200",
-            description: "This is a signed Fan"
+            name: "Signed Marty Turco Photo",
+            image: "src/assets/turco.png",
+            description: "Marty turco Signed Photo 8x10"
+        },
+                {
+            id:"8",
+            name: "Bobby Ryan signed puck",
+            image: "src/assets/cuz.png",
+            description: "Bobby Ryan signed puck"
         },
         {
-            id:"8",
-            name: "Signed Tooth",
-            image: "https://picsum.photos/seed/8/200",
-            description: "This is a signed Tooth"
+            id:"9",
+            name: "Dylan cozens signed puck",
+            image: "src/assets/ryanpuck.png",
+            description: "Dylan cozens signed puck"
+        },
+        {
+            id:"10",
+            name: "Signed Jonathan Huberdeau Card ",
+            image: "src/assets/jhphoto.png",
+            description: "Jonathan Huberdeau 8x10 signed card 23 of 50"
+        },
+        {
+            id:"11",
+            name: "Joni Pitkanen signed photo",
+            image: "src/assets/jp.png",
+            description: "Joni Pitkanen signed photo 8x10"
+        },
+        {
+            id:"12",
+            name: "Elias Lindholm signed photo",
+            image: "src/assets/lindholm.png",
+            description: "Elias Lindholm signed photo 8x10"
+        },
+        {
+            id:"13",
+            name: "Jamie Drysdale signed photo",
+            image: "src/assets/jd.png",
+            description: "Jamie Drysdale signed photo 8x10"
+        },
+        {
+            id:"14",
+            name: "Signed Wade Redden Photo",
+            image: 'src/assets/waderedden.png',
+            description: "Wade Redden signed photo 8x10"
+        },
+        {
+            id:"15",
+            name: "Dan Bylsma Signed Photo",
+            image: "src/assets/db.png",
+            description: "Dan Bylsma Signed Photo 8x10"
         }
     ]
 
@@ -86,7 +127,7 @@ export class SilentAuctionItems extends LitElement {
 
                         <div class="button-container">
                         <button
-                        @click= "${() => this._getSelectedAuctionItem(item)}"
+                        @click= "${() => this._openModal(item.id,item.name,item.image)}"
                         >
                             Submit Bid
                         </button>
@@ -100,24 +141,32 @@ export class SilentAuctionItems extends LitElement {
         `
     }
 
-    private async _sendAuctionItem(item: SilentAuctionItem): Promise<void> {
-        try {
-            const submitBid = {name: item.name, 
-                phoneNumber: '914-343-3435',
-                email: "jnefjnfre@aol.com",
-                amount: 10000.40,
-                itemId: parseInt(item.id,10)
-            }
-            await auctionItemService.submitBid(submitBid);
-        } catch (error){
-            console.log(error);
-        }
-    }
+    // private async _sendAuctionItem(item: SilentAuctionItem): Promise<void> {
+    //     try {
+    //         const submitBid = {name: item.name, 
+    //             phoneNumber: '914-343-3435',
+    //             email: "jnefjnfre@aol.com",
+    //             amount: 10000.40,
+    //             itemId: parseInt(item.id,10)
+    //         }
+    //         await auctionItemService.submitBid(submitBid);
+    //     } catch (error){
+    //         console.log(error);
+    //     }
+    // }
 
-    private _getSelectedAuctionItem(item: SilentAuctionItem): void{
-        this._sendAuctionItem(item);
-        console.log(item);
-    }
+    // private _getSelectedAuctionItem(item: SilentAuctionItem): void{
+    //     this._sendAuctionItem(item);
+    //     // @click= "${() => this._getSelectedAuctionItem(item)}"
+    //     console.log(item);
+    // }
+
+     private _openModal(itemId:string, itemName:string, itemImage:string): void{
+        console.log(itemId);
+        this.dispatchEvent(new CustomEvent('open-modal', {
+            detail: {itemId, itemName, itemImage},
+        }))
+     }
 }
                 
 //                 <div class="item">

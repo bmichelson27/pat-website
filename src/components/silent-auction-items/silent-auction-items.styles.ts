@@ -16,8 +16,8 @@ export default css`
     }
 
     .grid--custom {
-        grid-template-columns: repeat(5, fit-content(100%));
-        grid-template-rows: repeat(5, minmax(0, 1fr))
+        grid-template-columns: repeat(1, fit-content(100%));
+        grid-template-rows: repeat(1, minmax(0, 1fr))
     }
 
     .section-auction-items {
@@ -29,6 +29,7 @@ export default css`
         color: black;
         font-weight: 600;
         margin-bottom: 3.2rem;
+        padding: 0 12px;
     }
 
     .auction-img {
@@ -50,14 +51,30 @@ export default css`
     }
 
     button {
-        background-color: green;
+        background-color: #000000a3;
         border: 0;
         border-radius: 5px;
         box-shadow:0 2px 4px rgba(0, 0, 0, 0.2);
         padding: 10px 25px;
+        color:white;
     }
 
     .button-container {
         padding: 9px;
+    }
+
+    @media(min-width:619px){
+    .grid--custom {
+        grid-template-columns: repeat(3, fit-content(100%));
+        grid-template-rows: repeat(5, minmax(0, 1fr))
+    }
+}
+
+    @media(min-width:990px){
+    .grid--custom {
+        grid-template-columns: repeat(4, fit-content(100%));
+        grid-template-rows: repeat(5, minmax(0, 1fr))
+    }
+
     }
 `

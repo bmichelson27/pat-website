@@ -4,7 +4,7 @@ import componentStyle from './master-layout.styles'
 import "../modal-bio-pat/modal-bio-pat";
 import "../silent-auction-items/silent-auction-items";
 import "../tab-component/tab-component";
-import patImage from '../../assets/patnewn.png'
+import patLogo from '../../assets/patlogo.png'
 
 
 
@@ -16,12 +16,8 @@ export class MasterLayout extends LitElement {
     render() {
         return html`
         <div class="title-container">
-            <div>
-                <img src=${patImage}>
-            </div>
-            <div>
-                Logo
-            </div>
+            <img src=${patLogo}>
+            <a href="https://www.gofundme.com/f/supporting-the-ciarcia-family" target="_blank">Donate to the Ciarcia Family Here</a>
         </div>
 
         <div class="form-container">

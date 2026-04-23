@@ -7,11 +7,24 @@ export default css`
         height: 100vh;
     }
 
+    img { 
+        width: 300px; 
+        height: 173px; 
+    }
+
+    a {
+        color: #FFFFFF; /* White */
+        text-decoration: none; /* Removes the default underline */
+    }
+
     .title-container {
         /* padding: 2em 2em 4em; */
         background-color: black;
         border-bottom-right-radius: 4em;
         display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        color:white;
         flex-direction: column;
     }
 
@@ -19,9 +32,8 @@ export default css`
         display: flex;
         gap: 1.5rem;
         flex: 1 0 0;
-        margin-top: -2rem;
-        margin-right: 2rem;
-        padding: 0 2em 0 2em;
+        /* margin:auto; */
+        /* padding: 0 2em 0 2em; */
         background-color: white;
         border-radius: 1em 1em 0.5em 0.5em;
         overflow: hidden;
@@ -33,7 +45,7 @@ export default css`
 
     .form-content {
         flex: 1;
-        padding: 0.5em 0;
+        /* padding: 0.5em 0; */
         overflow-y: auto;
     }
 `;
