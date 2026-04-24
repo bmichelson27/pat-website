@@ -80,6 +80,24 @@ export default css`
     display:none;
 }
 
+     .gofundme {
+    cursor: pointer;
+    /* margin-top: auto; */
+    display: flex;
+    margin-top: auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: auto;
+    border-radius: 6px;
+    background-color: #040264;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px 123px;
+    color: white;
+     }
+
+
 @media(min-width:619px){
     .tabs .active::before {
         content: "";

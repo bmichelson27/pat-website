@@ -7,6 +7,11 @@ import "../silent-auction-items/silent-auction-items";
 import '../modal-order/modal-order-new';
 import '../pat-gofundme/pat-gofundme';
 import { ifDefined } from 'lit/directives/if-defined.js';
+import shirt1 from '../../assets/shirt1.png'
+import shirt2 from '../../assets/shirt2.png'
+import shirt3 from '../../assets/shirt3.png'
+import shirt4 from '../../assets/shirt4.png'
+import '../tshirt-carosal/tshirt-carosal';
  
 
 
@@ -103,14 +108,25 @@ export class TabComponent extends LitElement {
                 @open-modal=${this._openModal}
                 ></silent-auction-items>
             `
-        } else if (this._selectedVal === 'Donate Now') {
-            return html `
-            <pat-gofundme></pat-gofundme>
-
-            `
         } else {
-            return html ``
+            return html `
+                <tshirt-carosal>
+                    <img src=${shirt1}>
+                    <img src=${shirt2}>
+                    <img src=${shirt3}>
+                    <img src=${shirt4}>
+                </tshirt-carosal>
+                <button class="gofundme"
+                id="gofundme"
+                @click="${this._openLink}">
+                <strong>Order Now</strong>
+                </button>
+            `
         }
+    }
+
+    private _openLink(): void {
+        window.open('https://yt-apparel.chipply.com/Iron40/?action=viewall', '_blank')
     }
 
 }
