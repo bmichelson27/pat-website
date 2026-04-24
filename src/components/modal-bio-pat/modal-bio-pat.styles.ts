@@ -75,7 +75,7 @@ export default css`
     .modal {
         background-size: cover;
         background-position: bottom;
-        background-image: url('src/assets/patnew.png');
+        background-image: var(--bg-image);
         /* height: 100vh; */
         /* width: 100%; */
         /* padding: 30px 50px; */
@@ -139,7 +139,7 @@ export default css`
     @media(min-width:600px){
         .modal {
             background-size: cover;
-            background-image: url('dist/patnew.png');
+            background-image: var(--bg-image);
             max-width: 800px;
             /* padding: 30px 50px; */
             border-radius: 16px;

@@ -1,6 +1,7 @@
 import {LitElement, html} from 'lit';
 import {customElement, query} from 'lit/decorators.js';
 import componentStyle from './modal-bio-pat.styles'
+import paty from '../../assets/patnew.png'
 
 
 @customElement('modal-bio-pat')
@@ -12,8 +13,11 @@ export class ModalBioPat extends LitElement {
 
     render() {
         return html`
-            <div class="modal-container"
-            id="modal_container">
+            <div 
+            class="modal-container"
+            id="modal_container"
+            style="--bg-image: url('${paty}')"
+            >
                 <div class="modal">
                     <div class="header">
                         <button class="close-button" @click="${this._closeModal}" aria-label="Close modal">
