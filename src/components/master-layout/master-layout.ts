@@ -17,7 +17,7 @@ export class MasterLayout extends LitElement {
         return html`
         <div class="title-container">
             <img src=${patLogo}>
-            <a href="https://www.gofundme.com/f/supporting-the-ciarcia-family" target="_blank">Donate to the Ciarcia Family Here</a>
+            <a href="https://www.gofundme.com/f/supporting-the-ciarcia-family" target="_blank">Donate to the Ciarcia Family</a>
         </div>
 
         <div class="form-container">
