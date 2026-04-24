@@ -139,7 +139,7 @@ export default css`
     @media(min-width:600px){
         .modal {
             background-size: cover;
-            background-image: url('src/assets/patnew.png');
+            background-image: url('dist/assets/patnew.png');
             max-width: 800px;
             /* padding: 30px 50px; */
             border-radius: 16px;
