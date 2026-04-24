@@ -16,9 +16,10 @@ export class ModalBioPat extends LitElement {
             <div 
             class="modal-container"
             id="modal_container"
-            style="--bg-image: url('${paty}')"
             >
+            <img src=${paty} class="pat-img">
                 <div class="modal">
+                    <div class="content">
                     <div class="header">
                         <button class="close-button" @click="${this._closeModal}" aria-label="Close modal">
                             <span aria-hidden="true"></span>
