@@ -3,6 +3,7 @@ import {customElement} from 'lit/decorators.js';
 import componentStyle from './silent-auction-items.styles'
 import type { SilentAuctionItem } from '../../models/silent-auction-item';
 import islanders from '../../assets/islanders.png'
+import ulmark from '../../assets/Ulmark.png'
 
 @customElement('silent-auction-items')
 export class SilentAuctionItems extends LitElement {
@@ -18,7 +19,7 @@ export class SilentAuctionItems extends LitElement {
         {
             id:"2",
             name: "Linus Ullmark signed jersey",
-            image: "src/assets/Ulmark.png",
+            image: ulmark,
             description: "Linus Ullmark signed jersey"
         },
         {
