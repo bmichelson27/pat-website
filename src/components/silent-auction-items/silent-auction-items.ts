@@ -3,7 +3,20 @@ import {customElement} from 'lit/decorators.js';
 import componentStyle from './silent-auction-items.styles'
 import type { SilentAuctionItem } from '../../models/silent-auction-item';
 import islanders from '../../assets/islanders.png'
-import ulmark from '../../assets/Ulmark.png'
+import ulmark from '../../assets/Ulmark.png' 
+import dob from '../../assets/noahdobson.png'
+import barzel from '../../assets/barzel.png'
+import pullock from '../../assets/pullock.png'
+import jgp from '../../assets/jgp.png'
+import turco from '../../assets/turco.png'
+import cuz from '../../assets/cuz.png'
+import ryanpuck from '../../assets/ryanpuck.png'
+import jhphoto from '../../assets/jhphoto.png'
+import jp from '../../assets/jp.png'
+import lindholm from '../../assets/lindholm.png'
+import jd from '../../assets/jd.png'
+import waderedden from '../../assets/waderedden.png'
+import db from '../../assets/db.png'
 
 @customElement('silent-auction-items')
 export class SilentAuctionItems extends LitElement {
@@ -25,79 +38,79 @@ export class SilentAuctionItems extends LitElement {
         {
             id:"3",
             name: "Signed Noah Dobson Jersey",
-            image: "src/assets/noahdobson.png",
+            image: dob,
             description: "Noah Dobson signed jersey"
         },
         {
             id:"4",
             name: "Mathew Barzel signed puck",
-            image: "src/assets/barzel.png",
+            image: barzel,
             description: "Mathew Barzel signed puck in framed photo"
         },
         {
             id:"5",
             name: "Ryan pulock signed puck",
-            image: "src/assets/pullock.png",
+            image: pullock,
             description: "Ryan pulock signed puck in framed photo"
         },
         {
             id:"6",
             name: "Signed Jean Gabriel Pageau Puck",
-            image: "src/assets/jgp.png",
+            image: jgp,
             description: "Signed Jean Gabriel Pageau Puck"
         },
         {
             id:"7",
             name: "Signed Marty Turco Photo",
-            image: "src/assets/turco.png",
+            image: turco,
             description: "Marty turco Signed Photo 8x10"
         },
                 {
             id:"8",
             name: "Bobby Ryan signed puck",
-            image: "src/assets/cuz.png",
+            image: cuz,
             description: "Bobby Ryan signed puck"
         },
         {
             id:"9",
             name: "Dylan cozens signed puck",
-            image: "src/assets/ryanpuck.png",
+            image: ryanpuck,
             description: "Dylan cozens signed puck"
         },
         {
             id:"10",
             name: "Signed Jonathan Huberdeau Card ",
-            image: "src/assets/jhphoto.png",
+            image: jhphoto,
             description: "Jonathan Huberdeau 8x10 signed card 23 of 50"
         },
         {
             id:"11",
             name: "Joni Pitkanen signed photo",
-            image: "src/assets/jp.png",
+            image: jp,
             description: "Joni Pitkanen signed photo 8x10"
         },
         {
             id:"12",
             name: "Elias Lindholm signed photo",
-            image: "src/assets/lindholm.png",
+            image: lindholm,
             description: "Elias Lindholm signed photo 8x10"
         },
         {
             id:"13",
             name: "Jamie Drysdale signed photo",
-            image: "src/assets/jd.png",
+            image: jd,
             description: "Jamie Drysdale signed photo 8x10"
         },
         {
             id:"14",
             name: "Signed Wade Redden Photo",
-            image: 'src/assets/waderedden.png',
+            image: waderedden,
             description: "Wade Redden signed photo 8x10"
         },
         {
             id:"15",
             name: "Dan Bylsma Signed Photo",
-            image: "src/assets/db.png",
+            image: db,
             description: "Dan Bylsma Signed Photo 8x10"
         }
     ]
