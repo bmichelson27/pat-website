@@ -2,6 +2,7 @@ import {LitElement, html} from 'lit';
 import {customElement} from 'lit/decorators.js';
 import componentStyle from './silent-auction-items.styles'
 import type { SilentAuctionItem } from '../../models/silent-auction-item';
+import islanders from '../../assets/islanders.png'
 
 @customElement('silent-auction-items')
 export class SilentAuctionItems extends LitElement {
@@ -11,7 +12,7 @@ export class SilentAuctionItems extends LitElement {
         {
             id:"1",
             name: "Islander Dynasty Signed Plagues & Replica Stanley Cup Rings",
-            image: "src/assets/islanders.png",
+            image: islanders,
             description: "Billy Smith, Denis Potvin, Bryan Trottier, Mike Bossy, Clark Gillies and Bobby Nystrom Signed Plagues & Replica Stanley Cup Rings"
         },
         {
