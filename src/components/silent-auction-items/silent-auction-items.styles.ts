@@ -21,18 +21,26 @@ export default css`
     }
 
     .section-auction-items {
-        padding: 2rem 0;
+        /* padding: 2rem 0; */
     }
 
     .auction-item-title {
-        font-size: 1rem;
+        font-size: 13px;
         color: black;
-        font-weight: 600;
-        margin-bottom: 3.2rem;
+        font-weight: 530;
+        /* margin-bottom: 3.2rem; */
         padding: 0 12px;
     }
 
     .auction-img {
+        margin: 0 auto;
+        object-fit: cover;
+        display: block;
+        max-height: 200px;
+    }
+
+    .image-container {
+        background-color: white;
         width: 100%;
     }
 

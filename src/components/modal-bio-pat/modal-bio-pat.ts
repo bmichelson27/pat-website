@@ -1,52 +1,119 @@
-import {LitElement, html} from 'lit';
-import {customElement, query} from 'lit/decorators.js';
-import componentStyle from './modal-bio-pat.styles'
-import paty from '../../assets/patnew.png'
+// import {LitElement, html} from 'lit';
+// import {customElement, query} from 'lit/decorators.js';
+// import componentStyle from './modal-bio-pat.styles'
+// import paty from '../../assets/patnew.png'
 
+
+// @customElement('modal-bio-pat')
+// export class ModalBioPat extends LitElement {
+//     static override styles = [componentStyle];
+
+//     @query('#modal_container')
+//     private _modalElement!: HTMLDivElement
+
+//     render() {
+//         return html`
+//             <div 
+//             class="modal-container"
+//             id="modal_container"
+//             >
+//             <img src=${paty} class="pat-img">
+//                 <div class="modal">
+//                     <div class="content">
+//                     <div class="header">
+//                         <button class="close-button" @click="${this._closeModal}" aria-label="Close modal">
+//                             <span aria-hidden="true"></span>
+//                         </button>
+//                     </div>
+//                         <!-- <h1></h1> -->
+//                         <p>Earlier this month the Ciarcia lost a husband and father suddenly at 46 years old. Pat, a career Ironworker with Local 40, was an avid hockey player who touched the hockey community throughout the tristate area.
+//                             The only thing he loved more than hockey was his family, his wife Amy and their 3 young boys.
+//                         </p>
+//                         <button class="gofundme"
+//                             id="gofundme"
+//                             @click="${this._openLink}">
+//                            <strong>Donate Now</strong>
+//                         </button>
+//                 </div>
+//             </div>
+//         `
+//     }
+
+//     private _closeModal(): void {
+//         this._modalElement.style.display = 'none';
+//     }
+
+//     private _openLink(): void {
+//         window.open('https://www.gofundme.com/f/supporting-the-ciarcia-family', '_blank')
+//         this._modalElement.style.display = 'none';
+//     }
+
+
+// }
+
+import { LitElement, html } from 'lit';
+import { customElement, query } from 'lit/decorators.js';
+import componentStyle from './modal-bio-pat.styles';
+import paty from '../../assets/patnew.png';
 
 @customElement('modal-bio-pat')
 export class ModalBioPat extends LitElement {
-    static override styles = [componentStyle];
+  static override styles = [componentStyle];
 
-    @query('#modal_container')
-    private _modalElement!: HTMLDivElement
+  @query('#modal_container')
+  private _modalElement!: HTMLDivElement;
 
-    render() {
-        return html`
-            <div 
-            class="modal-container"
-            id="modal_container"
-            >
-            <img src=${paty} class="pat-img">
-                <div class="modal">
-                    <div class="content">
-                    <div class="header">
-                        <button class="close-button" @click="${this._closeModal}" aria-label="Close modal">
-                            <span aria-hidden="true"></span>
-                        </button>
-                    </div>
-                        <!-- <h1></h1> -->
-                        <p>Earlier this month the Ciarcia lost a husband and father suddenly at 46 years old. Pat, a career Ironworker with Local 40, was an avid hockey player who touched the hockey community throughout the tristate area.
-                            The only thing he loved more than hockey was his family, his wife Amy and their 3 young boys.
-                        </p>
-                        <button class="gofundme"
-                            id="gofundme"
-                            @click="${this._openLink}">
-                           <strong>Donate Now</strong>
-                        </button>
-                </div>
+  private _closeTimer?: number;
+
+  override firstUpdated(): void {
+    this._closeTimer = window.setTimeout(() => {
+      this._closeModal();
+    }, 5000);
+  }
+
+  override disconnectedCallback(): void {
+    super.disconnectedCallback();
+    if (this._closeTimer) {
+      clearTimeout(this._closeTimer);
+    }
+  }
+
+  render() {
+    return html`
+      <div class="modal-container" id="modal_container">
+        <img src=${paty} class="pat-img" />
+        <div class="modal">
+          <div class="content">
+            <div class="header">
+              <button class="close-button" @click=${this._closeModal} aria-label="Close modal">
+                <span aria-hidden="true"></span>
+              </button>
             </div>
-        `
+            <p>
+              Earlier this month the Ciarcia lost a husband and father suddenly at 46 years old.
+              Pat, a career Ironworker with Local 40, was an avid hockey player who touched the
+              hockey community throughout the tristate area. The only thing he loved more than
+              hockey was his family, his wife Amy and their 3 young boys.
+            </p>
+            <button class="gofundme" id="gofundme" @click=${this._openLink}>
+              <strong>Donate Now</strong>
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  private _closeModal = (): void => {
+    if (this._closeTimer) {
+      clearTimeout(this._closeTimer);
+      this._closeTimer = undefined;
     }
+    this._modalElement.style.display = 'none';
+  };
 
-    private _closeModal(): void {
-        this._modalElement.style.display = 'none';
-    }
-
-    private _openLink(): void {
-        window.open('https://www.gofundme.com/f/supporting-the-ciarcia-family', '_blank')
-        this._modalElement.style.display = 'none';
-    }
-
-
+  private _openLink = (): void => {
+    window.open('https://www.gofundme.com/f/supporting-the-ciarcia-family', '_blank');
+    this._closeModal();
+  };
 }

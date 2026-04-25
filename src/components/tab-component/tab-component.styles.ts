@@ -27,7 +27,7 @@ export default css`
     justify-content: space-around;
     text-transform: uppercase;
     font-weight: bold;
-    padding: 16px;
+    /* padding: 16px; */
     margin: 0 0 32px;
     position: sticky;
     top: 0px;
@@ -36,7 +36,7 @@ export default css`
 }
 
 .tabs p {
-    padding: 8px;
+    /* padding: 8px; */
 }
 
 .tabs p:hover {
@@ -51,20 +51,20 @@ export default css`
 }
 
 .line {
-    height: 3px;
+    height: 2px;
     width: 100%;
     background-color: #000080;
     position: absolute;
-    top: 96px;
+    top: 50px;
 }
 
 .tabs .active::before {
     content: "";
     width: 100%;
     height: 4px;
-    background-color: black;
+    background-color: #0404a5;
     position: absolute;
-    bottom: -32px;
+    bottom: -18px;
     left: -1%;
     z-index: 2;
     border-radius: 10px;
@@ -105,7 +105,7 @@ export default css`
         height: 4px;
         background-color:  #000080;
         position: absolute;
-        bottom: -32px;
+        bottom: -19px;
         left: -1%;
         z-index: 2;
         border-radius: 10px;

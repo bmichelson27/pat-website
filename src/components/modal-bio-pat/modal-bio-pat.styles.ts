@@ -72,7 +72,7 @@ export default css`
         text-align: center;
     } */
 
-    .pat-img {
+    /* .pat-img {
         object-fit:cover;
         z-index:0;
         position: absolute;
@@ -82,14 +82,8 @@ export default css`
         margin-right: auto;
         margin-bottom: auto;
         margin-top: auto;
-    }
-    .modal {
-        /* background-size: cover;
-        background-position: bottom;
-        background-image: var(--bg-image); */
-        /* height: 100vh; */
-        /* width: 100%; */
-        /* padding: 30px 50px; */
+    } */
+    /* .modal {
         height: 90vh;
         width: 86%;
         border-radius: 16px;
@@ -102,6 +96,39 @@ export default css`
         margin-bottom: auto;
         margin-top: auto;
         z-index:1;
+    } */
+    .pat-img {
+        object-fit: cover;
+        z-index: 0;
+        position: absolute;
+        /* height: 90vh; */
+        /* width: 86%; */
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+        margin-top: auto;
+        width: min(86vw, 720px);
+        max-height: min(90dvh, 900px);
+        min-height: min(78dvh, 900px);
+        overflow-y: auto;
+    }
+
+    .modal {
+        width: min(86vw, 720px);
+        max-height: min(90dvh, 900px);
+        min-height: min(78dvh, 900px);
+        overflow-y: auto;
+        border-radius: 16px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: auto;
+        margin-top: auto;
+        z-index: 1;
     }
 
     .header {
@@ -115,6 +142,7 @@ export default css`
         color: white;
         cursor: default; /* Changes from I-beam to arrow */
   user-select: none;
+      font-size: 13px;
     }
 
     .close-button {
@@ -144,7 +172,7 @@ export default css`
         border: 0;
         border-radius: 5px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        padding: 11px 24px;
+        padding: 4px 14px;
         color:black;
     }
 

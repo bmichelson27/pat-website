@@ -85,21 +85,17 @@ export default css`
     }
 
     .form-container {
-        /* display: flex;
-        flex-direction: column;
-        gap: 24px;
-        padding: 21px; */
-            display: grid;
+    display: grid;
     /* grid-template-columns: 100px 1fr; */
-    gap: 15px 10px;
-    max-width: 400px;
+    /* gap: 15px 10px; */
+    max-width: 388px;
     margin: auto;
     background-color: white;
-    padding: 2px;
+    /* padding: 2px; */
     grid-template-columns: repeat(1, fit-content(100%));
     grid-template-rows: repeat(2, minmax(0, 1fr));
     /* border-radius: 8px; */
-    /* box-shadow: 0 4px 8px  */
+    /* box-shadow: 0 4px 8px */
     }
 
     .close-button {
@@ -108,6 +104,7 @@ export default css`
         cursor: pointer;
         box-shadow: none;
         border:none;
+        padding: 0 4px;
 
     }
 
@@ -120,27 +117,31 @@ export default css`
     }
 
     input {
-        height: 30px;
-        border-radius: 8px;
+      height: 18px;
+    border-radius: 8px;
     }
 
     .form-field {
-        display: grid;
-        row-gap: 4px;
-        column-gap: 12px;
-        justify-content: start;
-        grid-template-columns: 20% 1fr;
-        align-items: center;
-        grid-template-columns: repeat(1, fit-content(100%));
+    display: grid;
+    row-gap: 0px;
+    /* column-gap: 12px; */
+    justify-content: start;
+    grid-template-columns: 20% 1fr;
+    align-items: center;
+    grid-template-columns: repeat(1, fit-content(100%));
         
     }
 
     .auction-img {
-        margin: auto;
+       margin: auto; 
         display: block;
-        width: 80%;
-        max-width: 700px;
+        /* width: 64%; */
+        max-width: 50%;
+        object-fit: cover;
+        height: auto;
+        justify-self: center;
     }
+
     @media(min-width:619px){
         .modal {
             background-color: white;

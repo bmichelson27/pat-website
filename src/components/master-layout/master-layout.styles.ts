@@ -13,8 +13,10 @@ export default css`
     }
 
     a {
-        color: #FFFFFF; /* White */
-        text-decoration: none; /* Removes the default underline */
+        color: #FFFFFF;
+        font-size: 20px;
+        text-decoration: underline;
+        padding: 6px;
     }
 
     .title-container {
